@@ -35,10 +35,19 @@ function Portfolio() {
   >(null);
   const [testimonialIdx, setTestimonialIdx] = useState(0);
   const cursorRef = useRef<HTMLDivElement>(null);
+  const themeInitialized = useRef(false);
 
-  // dark mode
+  // dark mode (persisted to localStorage; initial value already applied
+  // pre-hydration by the blocking script in __root.tsx, so the first pass
+  // here only syncs React state without touching the DOM/localStorage)
   useEffect(() => {
+    if (!themeInitialized.current) {
+      themeInitialized.current = true;
+      setDark(localStorage.getItem("theme") === "dark");
+      return;
+    }
     document.documentElement.classList.toggle("dark", dark);
+    localStorage.setItem("theme", dark ? "dark" : "light");
   }, [dark]);
 
   // scroll progress + sticky header + back-to-top
@@ -224,7 +233,7 @@ function Portfolio() {
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             aria-label="Back to top"
-            className="grid h-11 w-11 place-items-center rounded-full border border-border bg-card shadow-soft transition hover:-translate-y-0.5"
+            className="cursor-pointer grid h-11 w-11 place-items-center rounded-full border border-border bg-card shadow-soft transition hover:-translate-y-0.5"
           >
             <ArrowUp className="h-4 w-4" />
           </button>
@@ -232,7 +241,7 @@ function Portfolio() {
         <a
           href="mailto:rolandbissah10@gmail.com"
           aria-label="Contact"
-          className="grid h-14 w-14 place-items-center rounded-full text-white shadow-glow transition hover:scale-105"
+          className="cursor-pointer grid h-14 w-14 place-items-center rounded-full text-white shadow-glow transition hover:scale-105"
           style={{ background: "var(--gradient-primary)" }}
         >
           <MessageSquare className="h-5 w-5" />

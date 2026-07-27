@@ -19,7 +19,7 @@ export function Footer() {
               target="_blank"
               rel="noreferrer"
               aria-label="GitHub"
-              className="grid h-10 w-10 place-items-center rounded-full border border-border transition hover:text-foreground"
+              className="cursor-pointer grid h-10 w-10 place-items-center rounded-full border border-border transition hover:text-foreground"
             >
               <Github className="h-4 w-4" />
             </a>
@@ -28,14 +28,14 @@ export function Footer() {
               target="_blank"
               rel="noreferrer"
               aria-label="LinkedIn"
-              className="grid h-10 w-10 place-items-center rounded-full border border-border transition hover:text-foreground"
+              className="cursor-pointer grid h-10 w-10 place-items-center rounded-full border border-border transition hover:text-foreground"
             >
               <Linkedin className="h-4 w-4" />
             </a>
             <a
               href="mailto:rolandbissah10@gmail.com"
               aria-label="Email"
-              className="grid h-10 w-10 place-items-center rounded-full border border-border transition hover:text-foreground"
+              className="cursor-pointer grid h-10 w-10 place-items-center rounded-full border border-border transition hover:text-foreground"
             >
               <Mail className="h-4 w-4" />
             </a>

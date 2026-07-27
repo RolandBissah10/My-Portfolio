@@ -27,7 +27,7 @@ export function Projects({
           <button
             key={f}
             onClick={() => setFilter(f)}
-            className={`rounded-full px-4 py-2 text-sm font-medium transition ${
+            className={`cursor-pointer rounded-full px-4 py-2 text-sm font-medium transition ${
               filter === f
                 ? "text-white shadow-glow"
                 : "border border-border bg-background hover:bg-secondary"

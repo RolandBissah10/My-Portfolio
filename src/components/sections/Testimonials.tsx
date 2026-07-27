@@ -41,7 +41,7 @@ export function Testimonials({
                 key={i}
                 aria-label={`Testimonial ${i + 1}`}
                 onClick={() => setTestimonialIdx(i)}
-                className={`h-1.5 rounded-full transition-all ${i === testimonialIdx ? "w-8" : "w-3 bg-border"}`}
+                className={`cursor-pointer h-1.5 rounded-full transition-all ${i === testimonialIdx ? "w-8" : "w-3 bg-border"}`}
                 style={
                   i === testimonialIdx
                     ? { background: "var(--gradient-primary)" }

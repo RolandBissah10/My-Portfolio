@@ -27,7 +27,7 @@ export function Header({
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8">
         <button
           onClick={() => scrollTo("home")}
-          className="flex items-center gap-2 font-display text-lg font-bold tracking-tight"
+          className="cursor-pointer flex items-center gap-2 font-display text-lg font-bold tracking-tight"
         >
           <span
             className="grid h-9 w-9 place-items-center rounded-xl text-white shadow-glow"
@@ -43,7 +43,7 @@ export function Header({
             <button
               key={n.id}
               onClick={() => scrollTo(n.id)}
-              className="rounded-full px-4 py-2 text-sm font-medium text-muted-foreground transition hover:bg-secondary hover:text-foreground"
+              className="cursor-pointer rounded-full px-4 py-2 text-sm font-medium text-muted-foreground transition hover:bg-secondary hover:text-foreground"
             >
               {n.label}
             </button>
@@ -54,7 +54,7 @@ export function Header({
           <button
             aria-label="Toggle theme"
             onClick={() => setDark((v: boolean) => !v)}
-            className="grid h-10 w-10 place-items-center rounded-full border border-border bg-background/60 transition hover:bg-secondary"
+            className="cursor-pointer grid h-10 w-10 place-items-center rounded-full border border-border bg-background/60 transition hover:bg-secondary"
           >
             {dark ? (
               <Sun className="h-4 w-4" />
@@ -64,7 +64,7 @@ export function Header({
           </button>
           <button
             onClick={() => scrollTo("contact")}
-            className="hidden rounded-full px-5 py-2.5 text-sm font-semibold text-white shadow-glow transition hover:brightness-110 sm:inline-flex"
+            className="cursor-pointer hidden rounded-full px-5 py-2.5 text-sm font-semibold text-white shadow-glow transition hover:brightness-110 sm:inline-flex"
             style={{ background: "var(--gradient-primary)" }}
           >
             Hire Me
@@ -72,7 +72,7 @@ export function Header({
           <button
             aria-label="Menu"
             onClick={() => setMenuOpen((v: boolean) => !v)}
-            className="grid h-10 w-10 place-items-center rounded-full border border-border lg:hidden"
+            className="cursor-pointer grid h-10 w-10 place-items-center rounded-full border border-border lg:hidden"
           >
             {menuOpen ? (
               <X className="h-4 w-4" />
@@ -90,7 +90,7 @@ export function Header({
               <button
                 key={n.id}
                 onClick={() => scrollTo(n.id)}
-                className="rounded-lg px-3 py-3 text-left text-sm font-medium hover:bg-secondary"
+                className="cursor-pointer rounded-lg px-3 py-3 text-left text-sm font-medium hover:bg-secondary"
               >
                 {n.label}
               </button>

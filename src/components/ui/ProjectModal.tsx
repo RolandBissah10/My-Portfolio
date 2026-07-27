@@ -43,7 +43,7 @@ export function ProjectModal({
             <button
               aria-label="Close"
               onClick={onClose}
-              className="grid h-9 w-9 place-items-center rounded-full border border-border hover:bg-secondary"
+              className="cursor-pointer grid h-9 w-9 place-items-center rounded-full border border-border hover:bg-secondary"
             >
               <X className="h-4 w-4" />
             </button>

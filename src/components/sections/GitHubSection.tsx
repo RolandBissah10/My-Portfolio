@@ -23,7 +23,7 @@ export function GitHubSection() {
               href="https://github.com/RolandBissah10/"
               target="_blank"
               rel="noreferrer"
-              className="text-sm font-semibold"
+              className="cursor-pointer text-sm font-semibold"
               style={{ color: "var(--brand-purple)" }}
             >
               Visit profile →

@@ -94,7 +94,7 @@ export function Contact() {
           <div className="mt-5 flex flex-wrap gap-3">
             <button
               type="submit"
-              className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold text-white shadow-glow transition hover:brightness-110"
+              className="cursor-pointer inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold text-white shadow-glow transition hover:brightness-110"
               style={{ background: "var(--gradient-primary)" }}
             >
               <Send className="h-4 w-4" /> Send Message
@@ -103,7 +103,7 @@ export function Contact() {
               href="https://calendly.com/"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-5 py-2.5 text-sm font-semibold hover:bg-secondary"
+              className="cursor-pointer inline-flex items-center gap-2 rounded-full border border-border bg-background px-5 py-2.5 text-sm font-semibold hover:bg-secondary"
             >
               <Calendar className="h-4 w-4" /> Schedule Meeting
             </a>

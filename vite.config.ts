@@ -9,7 +9,7 @@ export default defineConfig({
     tanstackStart({
       server: { entry: "server" },
     }),
-    netlify(),
+    netlify({ dev: { redirects: { enabled: false } } }),
     react(),
     tailwindcss(),
   ],

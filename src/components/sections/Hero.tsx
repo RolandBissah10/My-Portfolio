@@ -42,7 +42,7 @@ export function Hero({ typed, scrollTo }: HeroProps) {
           <div className="animate-fade-up mt-8 flex flex-wrap items-center gap-3">
             <button
               onClick={() => scrollTo("contact")}
-              className="group inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white shadow-glow transition hover:brightness-110"
+              className="group cursor-pointer inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white shadow-glow transition hover:brightness-110"
               style={{ background: "var(--gradient-primary)" }}
             >
               Hire Me{" "}
@@ -50,14 +50,14 @@ export function Hero({ typed, scrollTo }: HeroProps) {
             </button>
             <button
               onClick={() => scrollTo("projects")}
-              className="inline-flex items-center gap-2 rounded-full border border-border bg-background/60 px-6 py-3 text-sm font-semibold backdrop-blur transition hover:bg-secondary"
+              className="cursor-pointer inline-flex items-center gap-2 rounded-full border border-border bg-background/60 px-6 py-3 text-sm font-semibold backdrop-blur transition hover:bg-secondary"
             >
               View Projects
             </button>
             <a
               href="#"
               onClick={(e) => e.preventDefault()}
-              className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition hover:opacity-80"
+              className="cursor-pointer inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition hover:opacity-80"
               style={{ color: "var(--brand-gold)" }}
             >
               <Download className="h-4 w-4" /> Download Resume
@@ -70,7 +70,7 @@ export function Hero({ typed, scrollTo }: HeroProps) {
               target="_blank"
               rel="noreferrer"
               aria-label="GitHub"
-              className="transition hover:text-foreground"
+              className="cursor-pointer transition hover:text-foreground"
             >
               <Github className="h-5 w-5" />
             </a>
@@ -79,14 +79,14 @@ export function Hero({ typed, scrollTo }: HeroProps) {
               target="_blank"
               rel="noreferrer"
               aria-label="LinkedIn"
-              className="transition hover:text-foreground"
+              className="cursor-pointer transition hover:text-foreground"
             >
               <Linkedin className="h-5 w-5" />
             </a>
             <a
               href="mailto:rolandbissah10@gmail.com"
               aria-label="Email"
-              className="transition hover:text-foreground"
+              className="cursor-pointer transition hover:text-foreground"
             >
               <Mail className="h-5 w-5" />
             </a>
