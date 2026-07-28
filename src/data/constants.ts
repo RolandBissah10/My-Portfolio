@@ -97,36 +97,64 @@ export const SKILLS: {
 
 export const PROJECTS = [
   {
-    title: "Sign Language Translator",
-    tag: "ML / Mobile",
+    title: "QAAS — QA as a Service",
+    tag: "AI / QA Platform",
     category: "AI",
     description:
-      "ML-powered app translating sign language to text with text-to-sign and speech-to-text.",
-    tech: ["FastAPI", "TensorFlow", "Firebase", "Android Studio", "Python"],
+      "AI-powered QA platform that crawls any URL, generates and executes Playwright/REST-Assured tests via Claude, auto-detects bugs, and reports results across multi-tenant team workspaces.",
+    tech: ["React", "TypeScript", "Java", "Spring Boot", "Playwright"],
+    repoUrl: "https://github.com/RolandBissah10/QAAS",
+    liveUrl: undefined,
   },
   {
-    title: "Task Management System",
+    title: "Smart Job Alert System",
     tag: "Full Stack",
     category: "Web",
     description:
-      "Modern task platform to organize projects, assign tasks, and manage deadlines.",
-    tech: ["Spring Boot", "Java", "MySQL", "React"],
+      "FastAPI-based job scraper and alert platform that tracks listings, matches user preferences by keyword ranking, and sends automated notifications on a scheduler.",
+    tech: ["FastAPI", "Python", "MongoDB", "JavaScript"],
+    repoUrl: "https://github.com/RolandBissah10/Smart-Job-Alert-System",
+    liveUrl: "https://smart-job-alert.netlify.app/",
   },
   {
-    title: "QA Automation Framework",
+    title: "Todo Management API",
+    tag: "Backend API",
+    category: "Web",
+    description:
+      "Professional RESTful task management API built with Spring Boot and Java 17, demonstrating Agile/DevOps best practices with 92% test coverage.",
+    tech: ["Java", "Spring Boot", "Maven", "JUnit"],
+    repoUrl: "https://github.com/RolandBissah10/Todo-Management-API",
+    liveUrl: undefined,
+  },
+  {
+    title: "Hospital Management System",
+    tag: "Enterprise",
+    category: "Web",
+    description:
+      "JavaFX desktop application for hospital operations with a hybrid MySQL + MongoDB architecture across patients, doctors, appointments, and inventory.",
+    tech: ["Java", "JavaFX", "MySQL", "MongoDB"],
+    repoUrl: "https://github.com/RolandBissah10/HospitalManagementSystem",
+    liveUrl: undefined,
+  },
+  {
+    title: "InspireHope Foundation",
+    tag: "Frontend",
+    category: "Web",
+    description:
+      "Responsive React + Vite landing site for a nonprofit foundation, with hero, impact, programs, events, and contact sections plus a mobile-friendly nav.",
+    tech: ["React", "Vite", "JavaScript", "CSS"],
+    repoUrl: "https://github.com/RolandBissah10/INSPIREHOPE_FOUNDATION",
+    liveUrl: "https://inspirehopefoundation.netlify.app/",
+  },
+  {
+    title: "API Testing With RestAssured",
     tag: "Automation",
     category: "QA",
     description:
-      "Automation framework with Selenium, RestAssured, Postman, and JUnit for web and REST APIs.",
-    tech: ["Selenium", "RestAssured", "Postman", "JUnit"],
-  },
-  {
-    title: "Employee Performance Module",
-    tag: "Enterprise",
-    category: "QA",
-    description:
-      "Built and tested modules for feedback, staff management, CDC requests, and consolidated views.",
-    tech: ["Java", "Spring", "Oracle", "JIRA"],
+      "REST API test automation framework in Java using REST Assured and JUnit 5, covering CRUD operations across six endpoints with JSON schema validation and Allure reporting.",
+    tech: ["Java", "REST Assured", "JUnit 5", "Allure"],
+    repoUrl: "https://github.com/RolandBissah10/API-Testing-With-RestAssured",
+    liveUrl: undefined,
   },
 ];
 

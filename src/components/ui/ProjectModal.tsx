@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { X } from "lucide-react";
+import { ExternalLink, Github, X } from "lucide-react";
 import { PROJECTS } from "@/data/constants";
 import { ProjectThumb } from "./ProjectThumb";
 
@@ -60,6 +60,25 @@ export function ProjectModal({
                 {t}
               </span>
             ))}
+          </div>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <a
+              href={project.liveUrl ?? project.repoUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="cursor-pointer inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold text-white shadow-glow transition hover:brightness-110"
+              style={{ background: "var(--gradient-primary)" }}
+            >
+              {project.liveUrl ? (
+                <>
+                  <ExternalLink className="h-4 w-4" /> View Live
+                </>
+              ) : (
+                <>
+                  <Github className="h-4 w-4" /> View Code
+                </>
+              )}
+            </a>
           </div>
         </div>
       </div>
