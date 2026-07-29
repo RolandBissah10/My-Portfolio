@@ -55,8 +55,8 @@ export function Hero({ typed, scrollTo }: HeroProps) {
               View Projects
             </button>
             <a
-              href="#"
-              onClick={(e) => e.preventDefault()}
+              href="/Francis_Roland_Bissah.pdf"
+              download
               className="cursor-pointer inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition hover:opacity-80"
               style={{ color: "var(--brand-gold)" }}
             >
