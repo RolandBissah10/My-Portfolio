@@ -11,16 +11,16 @@ export const NAV = [
 export const TITLES = [
   "Full Stack Web Developer",
   "Quality Assurance Engineer",
-  "Test Automation Specialist",
-  "API Testing Expert",
+  "UI & API Automation Specialist",
+  "Manual Testing Specialist",
 ];
 
 export const STATS = [
-  { label: "Years Learning", value: 4, suffix: "+" },
-  { label: "Projects Completed", value: 25, suffix: "+" },
-  { label: "Technologies Used", value: 30, suffix: "+" },
-  { label: "Certificates", value: 8, suffix: "" },
-  { label: "GitHub Contributions", value: 600, suffix: "+" },
+  { label: "Years Learning", value: 3, suffix: "+" },
+  { label: "Projects Completed", value: 18, suffix: "+" },
+  { label: "Technologies Used", value: 15, suffix: "+" },
+  { label: "Certificates", value: 5, suffix: "+" },
+  { label: "GitHub Contributions", value: 350, suffix: "+" },
 ];
 
 export const SKILLS: {
@@ -32,30 +32,30 @@ export const SKILLS: {
     group: "Frontend",
     iconName: "Globe",
     items: [
-      { name: "React", level: 92 },
-      { name: "TypeScript", level: 85 },
-      { name: "JavaScript", level: 93 },
-      { name: "Tailwind CSS", level: 90 },
-      { name: "HTML", level: 98 },
-      { name: "CSS", level: 94 },
+      { name: "React", level: 50 },
+      { name: "TypeScript", level: 50 },
+      { name: "JavaScript", level: 65 },
+      { name: "Tailwind CSS", level: 75 },
+      { name: "HTML", level: 85 },
+      { name: "CSS", level: 85 },
     ],
   },
   {
     group: "Backend",
     iconName: "TerminalSquare",
     items: [
-      { name: "Java", level: 88 },
-      { name: "Spring Boot", level: 85 },
-      { name: "Python", level: 82 },
-      { name: "FastAPI", level: 80 },
-      { name: "REST APIs", level: 90 },
+      { name: "Java", level: 70 },
+      { name: "Spring Boot", level: 65 },
+      { name: "Python", level: 70 },
+      { name: "FastAPI", level: 60 },
+      { name: "REST APIs", level: 80 },
     ],
   },
   {
     group: "Database",
     iconName: "Layers",
     items: [
-      { name: "MySQL", level: 88 },
+      { name: "MySQL", level: 70 },
       { name: "Firebase", level: 82 },
       { name: "H2 Database", level: 78 },
     ],
@@ -64,13 +64,13 @@ export const SKILLS: {
     group: "Testing & QA",
     iconName: "TestTube2",
     items: [
-      { name: "Selenium", level: 92 },
+      { name: "Selenium", level: 84 },
       { name: "RestAssured", level: 88 },
       { name: "Postman", level: 94 },
-      { name: "JUnit", level: 90 },
+      { name: "JUnit", level: 87 },
       { name: "Manual Testing", level: 95 },
-      { name: "API Testing", level: 92 },
-      { name: "Test Automation", level: 90 },
+      { name: "API Testing", level: 88 },
+      { name: "Test Automation", level: 80 },
     ],
   },
   {
@@ -80,8 +80,8 @@ export const SKILLS: {
       { name: "Git", level: 92 },
       { name: "GitHub", level: 94 },
       { name: "Docker", level: 78 },
-      { name: "Jenkins", level: 72 },
-      { name: "Maven", level: 80 },
+      { name: "Jenkins", level: 67 },
+      { name: "Maven", level: 70 },
       { name: "Linux", level: 78 },
     ],
   },
@@ -163,8 +163,8 @@ export const FILTERS = ["All", "Web", "AI", "QA"] as const;
 export const EXPERIENCE = [
   {
     role: "Quality Assurance Engineer",
-    company: "Enterprise Software Team",
-    period: "2023 - Present",
+    company: "AmaliTech Ghana",
+    period: "2025 - Present",
     points: [
       "Designed comprehensive manual test cases across web modules",
       "Automated regression suites using Selenium and JUnit",
@@ -177,7 +177,7 @@ export const EXPERIENCE = [
   {
     role: "Full Stack Developer (Freelance)",
     company: "Independent Projects",
-    period: "2022 - Present",
+    period: "2024 - 2025",
     points: [
       "Built React + Spring Boot applications end-to-end",
       "Designed relational schemas and REST APIs",
@@ -210,19 +210,19 @@ export const CERTS = [
 
 export const TESTIMONIALS = [
   {
-    name: "Sarah K.",
+    name: "Geoffrey Dadzie.",
     role: "Product Manager",
     quote:
       "Roland's attention to quality is unmatched. He ships clean features and catches issues before they ever reach users.",
   },
   {
-    name: "Daniel A.",
-    role: "Senior Engineer",
+    name: "Gloria Tampuri.",
+    role: "Senior QA Engineer",
     quote:
       "A rare mix of developer instinct and QA rigor. His automation framework saved us hours every release.",
   },
   {
-    name: "Priya M.",
+    name: "Francis Nsiah.",
     role: "Engineering Lead",
     quote:
       "Reliable, thoughtful, and deeply technical. Roland raises the bar for the entire team.",
@@ -250,7 +250,7 @@ export const TECH_STACK = [
 
 export const GITHUB_STATS = [
   { label: "Repositories", value: "24+" },
-  { label: "Followers", value: "48" },
+  { label: "Followers", value: "22" },
   { label: "Stars", value: "120+" },
-  { label: "Contributions", value: "600+" },
+  { label: "Contributions", value: "350+" },
 ];
