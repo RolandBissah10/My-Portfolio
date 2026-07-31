@@ -20,7 +20,7 @@ export const STATS = [
   { label: "Projects Completed", value: 18, suffix: "+" },
   { label: "Technologies Used", value: 15, suffix: "+" },
   { label: "Certificates", value: 5, suffix: "+" },
-  { label: "GitHub Contributions", value: 350, suffix: "+" },
+  { label: "GitHub Contributions", value: 600, suffix: "+" },
 ];
 
 export const SKILLS: {
