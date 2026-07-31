@@ -250,7 +250,7 @@ export const TECH_STACK = [
 
 export const GITHUB_STATS = [
   { label: "Repositories", value: "24+" },
-  { label: "Followers", value: "22" },
+  { label: "Followers", value: "22+" },
   { label: "Stars", value: "120+" },
-  { label: "Contributions", value: "350+" },
+  { label: "Contributions", value: "600+" },
 ];
