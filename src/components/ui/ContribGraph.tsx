@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { getContributions, GITHUB_USERNAME } from "@/lib/github";
+import { contributionsQuery, GITHUB_USERNAME } from "@/lib/github";
 
 const colors = [
   "var(--contrib-0)",
@@ -13,12 +13,7 @@ const colors = [
 const PLACEHOLDER_WEEKS = 53;
 
 export function ContribGraph() {
-  const { data, isPending, isError } = useQuery({
-    queryKey: ["github-contributions"],
-    queryFn: () => getContributions(),
-    staleTime: 60 * 60 * 1000,
-    retry: 1,
-  });
+  const { data, isPending, isError } = useQuery(contributionsQuery);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   // on narrow screens, start scrolled to the most recent weeks

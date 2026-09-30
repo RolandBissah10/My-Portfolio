@@ -72,3 +72,11 @@ export const getContributions = createServerFn({ method: "GET" }).handler(
     return data;
   },
 );
+
+// shared by the graph and the preloader so both hit the same cache entry
+export const contributionsQuery = {
+  queryKey: ["github-contributions"],
+  queryFn: () => getContributions(),
+  staleTime: 60 * 60 * 1000,
+  retry: 1,
+};

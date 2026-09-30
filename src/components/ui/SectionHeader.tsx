@@ -6,7 +6,7 @@ export function SectionHeader({
   title: string;
 }) {
   return (
-    <div className="mb-10">
+    <div className="reveal mb-10">
       <div className="font-mono text-xs font-medium uppercase tracking-wider text-primary">
         {eyebrow}
       </div>

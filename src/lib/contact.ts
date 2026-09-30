@@ -1,16 +1,23 @@
 import { createServerFn } from "@tanstack/react-start";
 import { Resend } from "resend";
+import { isValidEmail } from "./email";
 
 export type ContactPayload = {
   name: string;
   email: string;
-  subject?: string;
+  subject: string;
   message: string;
 };
 
 export const sendContactMessage = createServerFn({ method: "POST" })
   .validator((data: ContactPayload) => data)
   .handler(async ({ data }) => {
+    if (!isValidEmail(data.email ?? "")) {
+      throw new Error("Please enter a valid email address.");
+    }
+    if (!data.subject?.trim()) {
+      throw new Error("Please add a subject.");
+    }
     const apiKey = process.env.RESEND_API_KEY;
     if (!apiKey) {
       throw new Error(
@@ -22,10 +29,8 @@ export const sendContactMessage = createServerFn({ method: "POST" })
     const { error } = await resend.emails.send({
       from: "Portfolio Contact <onboarding@resend.dev>",
       to: "rolandbissah10@gmail.com",
-      replyTo: data.email,
-      subject: data.subject
-        ? `Portfolio inquiry: ${data.subject}`
-        : `Portfolio inquiry from ${data.name}`,
+      replyTo: data.email.trim(),
+      subject: `Portfolio inquiry: ${data.subject.trim()}`,
       text: `${data.message}\n\nFrom: ${data.name} (${data.email})`,
     });
 
