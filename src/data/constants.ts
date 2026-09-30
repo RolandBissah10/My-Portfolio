@@ -8,29 +8,19 @@ export const NAV = [
   { id: "contact", label: "Contact" },
 ];
 
-export const TITLES = [
-  "Full Stack Web Developer",
-  "Quality Assurance Engineer",
-  "UI & API Automation Specialist",
-  "Manual Testing Specialist",
-];
-
 export const STATS = [
-  { label: "Years Learning", value: 3, suffix: "+" },
-  { label: "Projects Completed", value: 18, suffix: "+" },
-  { label: "Technologies Used", value: 15, suffix: "+" },
-  { label: "Certificates", value: 5, suffix: "+" },
-  { label: "GitHub Contributions", value: 600, suffix: "+" },
+  { label: "Years learning to code", value: "3+" },
+  { label: "Public GitHub repositories", value: "18" },
+  { label: "GitHub contributions in the last year", value: "600+" },
+  { label: "Certificates", value: "6" },
 ];
 
 export const SKILLS: {
   group: string;
-  iconName: string;
   items: { name: string; level: number }[];
 }[] = [
   {
     group: "Frontend",
-    iconName: "Globe",
     items: [
       { name: "React", level: 50 },
       { name: "TypeScript", level: 50 },
@@ -42,7 +32,6 @@ export const SKILLS: {
   },
   {
     group: "Backend",
-    iconName: "TerminalSquare",
     items: [
       { name: "Java", level: 70 },
       { name: "Spring Boot", level: 65 },
@@ -53,7 +42,6 @@ export const SKILLS: {
   },
   {
     group: "Database",
-    iconName: "Layers",
     items: [
       { name: "MySQL", level: 70 },
       { name: "Firebase", level: 82 },
@@ -62,7 +50,6 @@ export const SKILLS: {
   },
   {
     group: "Testing & QA",
-    iconName: "TestTube2",
     items: [
       { name: "Selenium", level: 84 },
       { name: "RestAssured", level: 88 },
@@ -75,7 +62,6 @@ export const SKILLS: {
   },
   {
     group: "DevOps & Tools",
-    iconName: "Cpu",
     items: [
       { name: "Git", level: 92 },
       { name: "GitHub", level: 94 },
@@ -87,9 +73,8 @@ export const SKILLS: {
   },
   {
     group: "Cloud",
-    iconName: "Zap",
     items: [
-      { name: "AWS (Learning)", level: 55 },
+      { name: "AWS", level: 55 },
       { name: "Firebase", level: 82 },
     ],
   },
@@ -97,7 +82,7 @@ export const SKILLS: {
 
 export const PROJECTS = [
   {
-    title: "QAAS — QA as a Service",
+    title: "QAAS (QA as a Service)",
     tag: "AI / QA Platform",
     category: "AI",
     description:
@@ -187,15 +172,41 @@ export const EXPERIENCE = [
 ];
 
 export const SERVICES = [
-  { title: "Full Stack Web Development", iconName: "Code2" },
-  { title: "Quality Assurance", iconName: "CheckCircle2" },
-  { title: "Test Automation", iconName: "Zap" },
-  { title: "API Testing", iconName: "TerminalSquare" },
-  { title: "Web Application Development", iconName: "Globe" },
-  { title: "Bug Investigation", iconName: "TestTube2" },
   {
-    title: "Software Testing Consulting",
+    title: "Backend development",
+    iconName: "Code2",
+    description:
+      "REST APIs and services in Spring Boot or FastAPI, backed by MySQL or Firebase.",
+  },
+  {
+    title: "Quality assurance",
+    iconName: "CheckCircle2",
+    description:
+      "Test plans, manual test cases, and defect tracking through to a verified fix.",
+  },
+  {
+    title: "Test automation",
+    iconName: "Zap",
+    description:
+      "Selenium and JUnit regression suites that can run in a Jenkins pipeline.",
+  },
+  {
+    title: "API testing",
+    iconName: "TerminalSquare",
+    description:
+      "Postman collections and RestAssured suites covering CRUD flows, status codes, and JSON schemas.",
+  },
+  {
+    title: "Bug investigation",
+    iconName: "TestTube2",
+    description:
+      "Reproducing reported issues, narrowing down the cause, and writing reports developers can act on.",
+  },
+  {
+    title: "Testing consulting",
     iconName: "Briefcase",
+    description:
+      "Reviewing your current test approach and pointing out where automation would save the most time.",
   },
 ];
 
@@ -210,47 +221,21 @@ export const CERTS = [
 
 export const TESTIMONIALS = [
   {
-    name: "Geoffrey Dadzie.",
+    name: "Geoffrey Dadzie",
     role: "Product Manager",
     quote:
       "Roland's attention to quality is unmatched. He ships clean features and catches issues before they ever reach users.",
   },
   {
-    name: "Gloria Tampuri.",
+    name: "Gloria Tampuri",
     role: "Senior QA Engineer",
     quote:
       "A rare mix of developer instinct and QA rigor. His automation framework saved us hours every release.",
   },
   {
-    name: "Francis Nsiah.",
+    name: "Francis Nsiah",
     role: "Engineering Lead",
     quote:
       "Reliable, thoughtful, and deeply technical. Roland raises the bar for the entire team.",
   },
-];
-
-export const TECH_STACK = [
-  "Java",
-  "Spring Boot",
-  "Python",
-  "FastAPI",
-  "React",
-  "TypeScript",
-  "Docker",
-  "Git",
-  "GitHub",
-  "Firebase",
-  "MySQL",
-  "Selenium",
-  "Postman",
-  "Jenkins",
-  "AWS",
-  "Tailwind",
-];
-
-export const GITHUB_STATS = [
-  { label: "Repositories", value: "24+" },
-  { label: "Followers", value: "22+" },
-  { label: "Stars", value: "120+" },
-  { label: "Contributions", value: "600+" },
 ];

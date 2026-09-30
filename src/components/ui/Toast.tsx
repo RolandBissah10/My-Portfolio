@@ -39,10 +39,11 @@ export function ToastProvider({ children }: { children: ReactNode }) {
         {toasts.map((t) => (
           <div
             key={t.id}
-            className="animate-fade-up pointer-events-auto flex w-full max-w-sm items-start gap-3 rounded-2xl border border-border bg-card p-4 shadow-glow"
+            role="status"
+            className="pointer-events-auto flex w-full max-w-sm items-start gap-3 rounded-lg border border-border bg-card p-4 shadow-lg"
           >
             {t.type === "success" ? (
-              <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[oklch(0.72_0.18_150)]" />
+              <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
             ) : (
               <XCircle className="mt-0.5 h-5 w-5 shrink-0 text-destructive" />
             )}

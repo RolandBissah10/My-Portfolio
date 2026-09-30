@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { ExternalLink, Github, X } from "lucide-react";
 import { PROJECTS } from "@/data/constants";
-import { ProjectThumb } from "./ProjectThumb";
+import { buttonPrimary, buttonSecondary } from "./button";
 
 export function ProjectModal({
   project,
@@ -22,64 +22,65 @@ export function ProjectModal({
 
   return (
     <div
-      className="fixed inset-0 z-[70] flex items-end justify-center bg-black/60 p-0 backdrop-blur-sm sm:items-center sm:p-6"
+      className="fixed inset-0 z-[70] flex items-end justify-center bg-black/50 sm:items-center sm:p-6"
       onClick={onClose}
     >
       <div
-        className="w-full max-w-2xl overflow-hidden rounded-t-3xl border border-border bg-card shadow-glow sm:rounded-3xl"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="project-modal-title"
+        className="w-full max-w-xl rounded-t-lg border border-border bg-card p-6 sm:rounded-lg sm:p-8"
         onClick={(e) => e.stopPropagation()}
       >
-        <ProjectThumb title={project.title} tag={project.tag} />
-        <div className="p-6 sm:p-8">
-          <div className="flex items-start justify-between gap-4">
-            <div>
-              <div className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
-                {project.category}
-              </div>
-              <h3 className="mt-1 font-display text-2xl font-bold">
-                {project.title}
-              </h3>
+        <div className="flex items-start justify-between gap-4">
+          <div>
+            <div className="font-mono text-xs text-muted-foreground">
+              {project.tag}
             </div>
-            <button
-              aria-label="Close"
-              onClick={onClose}
-              className="cursor-pointer grid h-9 w-9 place-items-center rounded-full border border-border hover:bg-secondary"
+            <h3 id="project-modal-title" className="mt-1 text-xl font-semibold">
+              {project.title}
+            </h3>
+          </div>
+          <button
+            aria-label="Close"
+            onClick={onClose}
+            className="grid h-8 w-8 cursor-pointer place-items-center rounded-md border border-border hover:bg-secondary"
+          >
+            <X className="h-4 w-4" />
+          </button>
+        </div>
+        <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+          {project.description}
+        </p>
+        <div className="mt-5 flex flex-wrap gap-1.5">
+          {project.tech.map((t) => (
+            <span
+              key={t}
+              className="rounded-sm bg-secondary px-2 py-0.5 font-mono text-xs"
             >
-              <X className="h-4 w-4" />
-            </button>
-          </div>
-          <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-            {project.description}
-          </p>
-          <div className="mt-5 flex flex-wrap gap-1.5">
-            {project.tech.map((t) => (
-              <span
-                key={t}
-                className="rounded-md bg-secondary px-2.5 py-1 text-xs font-medium"
-              >
-                {t}
-              </span>
-            ))}
-          </div>
-          <div className="mt-6 flex flex-wrap gap-3">
+              {t}
+            </span>
+          ))}
+        </div>
+        <div className="mt-6 flex flex-wrap gap-3">
+          {project.liveUrl && (
             <a
-              href={project.liveUrl ?? project.repoUrl}
+              href={project.liveUrl}
               target="_blank"
               rel="noreferrer"
-              className="cursor-pointer inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold text-white shadow-glow transition hover:brightness-110"
-              style={{ background: "var(--gradient-primary)" }}
+              className={buttonPrimary}
             >
-              {project.liveUrl ? (
-                <>
-                  <ExternalLink className="h-4 w-4" /> View Live
-                </>
-              ) : (
-                <>
-                  <Github className="h-4 w-4" /> View Code
-                </>
-              )}
+              <ExternalLink className="h-4 w-4" /> Live site
             </a>
-          </div>
+          )}
+          <a
+            href={project.repoUrl}
+            target="_blank"
+            rel="noreferrer"
+            className={project.liveUrl ? buttonSecondary : buttonPrimary}
+          >
+            <Github className="h-4 w-4" /> Source code
+          </a>
         </div>
       </div>
     </div>

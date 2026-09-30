@@ -1,56 +1,44 @@
 import { SKILLS } from "@/data/constants";
 import { SectionHeader } from "@/components/ui/SectionHeader";
-import { SkillBar } from "@/components/ui/SkillBar";
-import {
-  Code2,
-  Cpu,
-  Globe,
-  Layers,
-  TerminalSquare,
-  TestTube2,
-  Zap,
-} from "lucide-react";
 
-const ICON_MAP: Record<string, React.ReactNode> = {
-  Globe: <Globe className="h-5 w-5" />,
-  TerminalSquare: <TerminalSquare className="h-5 w-5" />,
-  Layers: <Layers className="h-5 w-5" />,
-  TestTube2: <TestTube2 className="h-5 w-5" />,
-  Cpu: <Cpu className="h-5 w-5" />,
-  Zap: <Zap className="h-5 w-5" />,
-  Code2: <Code2 className="h-5 w-5" />,
-};
+// self-rated levels, grouped into words instead of shown as percentages
+function tier(level: number) {
+  if (level >= 80) return "Strong";
+  if (level >= 60) return "Working";
+  return "Learning";
+}
 
 export function Skills() {
   return (
-    <section id="skills" className="bg-secondary/40">
-      <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-20">
-        <SectionHeader
-          eyebrow="Skills"
-          title="A modern, well-rounded toolkit"
-        />
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+    <section id="skills" className="border-y border-border bg-secondary/50">
+      <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
+        <SectionHeader eyebrow="Skills" title="Tools I work with" />
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {SKILLS.map((s) => (
             <div
               key={s.group}
-              className="reveal group rounded-3xl border border-border bg-card p-6 shadow-soft transition hover:-translate-y-1 hover:shadow-glow"
+              className="rounded-lg border border-border bg-card p-5"
             >
-              <div className="flex items-center gap-3">
-                <span
-                  className="grid h-10 w-10 place-items-center rounded-xl text-white"
-                  style={{ background: "var(--gradient-primary)" }}
-                >
-                  {ICON_MAP[s.iconName]}
-                </span>
-                <h3 className="font-display text-lg font-bold">
-                  {s.group}
-                </h3>
-              </div>
-              <div className="mt-5 space-y-3">
+              <h3 className="text-base font-semibold">{s.group}</h3>
+              <ul className="mt-3 divide-y divide-border">
                 {s.items.map((it) => (
-                  <SkillBar key={it.name} name={it.name} level={it.level} />
+                  <li
+                    key={it.name}
+                    className="flex items-center justify-between py-2 text-sm"
+                  >
+                    <span>{it.name}</span>
+                    <span
+                      className={`font-mono text-xs ${
+                        tier(it.level) === "Strong"
+                          ? "text-primary"
+                          : "text-muted-foreground"
+                      }`}
+                    >
+                      {tier(it.level)}
+                    </span>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
           ))}
         </div>

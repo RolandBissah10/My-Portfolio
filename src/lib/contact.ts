@@ -26,7 +26,7 @@ export const sendContactMessage = createServerFn({ method: "POST" })
       subject: data.subject
         ? `Portfolio inquiry: ${data.subject}`
         : `Portfolio inquiry from ${data.name}`,
-      text: `${data.message}\n\n— ${data.name} (${data.email})`,
+      text: `${data.message}\n\nFrom: ${data.name} (${data.email})`,
     });
 
     if (error) {

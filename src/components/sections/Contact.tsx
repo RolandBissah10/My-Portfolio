@@ -1,6 +1,15 @@
 import { useState } from "react";
-import { Calendar, Loader2, Mail, Phone, Send, Github, Linkedin } from "lucide-react";
+import {
+  Calendar,
+  Loader2,
+  Mail,
+  Phone,
+  Send,
+  Github,
+  Linkedin,
+} from "lucide-react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { buttonPrimary, buttonSecondary } from "@/components/ui/button";
 import { ContactRow } from "@/components/ui/ContactRow";
 import { Field } from "@/components/ui/Field";
 import { useToast } from "@/components/ui/Toast";
@@ -13,14 +22,11 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-20"
+      className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20"
     >
-      <SectionHeader
-        eyebrow="Contact"
-        title="Let's build something great"
-      />
+      <SectionHeader eyebrow="Contact" title="Get in touch" />
       <div className="grid gap-8 lg:grid-cols-5">
-        <div className="reveal space-y-4 lg:col-span-2">
+        <div className="divide-y divide-border self-start overflow-hidden rounded-lg border border-border bg-card lg:col-span-2">
           <ContactRow
             icon={<Mail className="h-4 w-4" />}
             label="Email"
@@ -77,7 +83,7 @@ export function Contact() {
               setIsSubmitting(false);
             }
           }}
-          className="reveal rounded-3xl border border-border bg-card p-6 shadow-soft sm:p-8 lg:col-span-3"
+          className="rounded-lg border border-border bg-card p-6 sm:p-8 lg:col-span-3"
         >
           <div className="grid gap-4 sm:grid-cols-2">
             <Field
@@ -102,24 +108,27 @@ export function Contact() {
             />
           </div>
           <div className="mt-4">
-            <label className="mb-1.5 block text-xs font-medium text-muted-foreground">
+            <label
+              htmlFor="message"
+              className="mb-1.5 block text-xs font-medium text-muted-foreground"
+            >
               Message
             </label>
             <textarea
+              id="message"
               name="message"
               required
               rows={5}
               maxLength={1000}
               placeholder="Tell me about your project…"
-              className="w-full resize-none rounded-xl border border-input bg-background px-4 py-3 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20"
+              className="w-full resize-none rounded-md border border-input bg-background px-3 py-2.5 text-sm outline-none transition-colors focus:border-primary focus:ring-2 focus:ring-primary/20"
             />
           </div>
           <div className="mt-5 flex flex-wrap gap-3">
             <button
               type="submit"
               disabled={isSubmitting}
-              className="cursor-pointer inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold text-white shadow-glow transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-70"
-              style={{ background: "var(--gradient-primary)" }}
+              className={buttonPrimary}
             >
               {isSubmitting ? (
                 <>
@@ -127,7 +136,7 @@ export function Contact() {
                 </>
               ) : (
                 <>
-                  <Send className="h-4 w-4" /> Send Message
+                  <Send className="h-4 w-4" /> Send message
                 </>
               )}
             </button>
@@ -135,9 +144,9 @@ export function Contact() {
               href="https://calendly.com/"
               target="_blank"
               rel="noreferrer"
-              className="cursor-pointer inline-flex items-center gap-2 rounded-full border border-border bg-background px-5 py-2.5 text-sm font-semibold hover:bg-secondary"
+              className={buttonSecondary}
             >
-              <Calendar className="h-4 w-4" /> Schedule Meeting
+              <Calendar className="h-4 w-4" /> Schedule a call
             </a>
           </div>
         </form>

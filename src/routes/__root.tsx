@@ -82,28 +82,28 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       meta: [
         { charSet: "utf-8" },
         { name: "viewport", content: "width=device-width, initial-scale=1" },
-        { title: "Roland Bissah - Full Stack Developer & QA Engineer" },
+        { title: "Roland Bissah - Backend Developer & QA Engineer" },
         {
           name: "description",
           content:
-            "Portfolio of Roland Bissah - Full Stack Web Developer and Quality Assurance Engineer building scalable, well-tested software.",
+            "Portfolio of Roland Bissah, backend developer and quality assurance engineer.",
         },
         { name: "author", content: "Roland Bissah" },
         {
           property: "og:title",
-          content: "Roland Bissah - Full Stack Developer & QA Engineer",
+          content: "Roland Bissah - Backend Developer & QA Engineer",
         },
         {
           property: "og:description",
           content:
-            "Scalable web applications, automated testing, and premium software experiences.",
+            "QA engineer at AmaliTech Ghana. Automated UI and API testing with Selenium, RestAssured and JUnit; backend services with Spring Boot and FastAPI.",
         },
         { property: "og:type", content: "website" },
         { name: "twitter:card", content: "summary_large_image" },
       ],
       links: [
         { rel: "stylesheet", href: appCss },
-        { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+        { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
         { rel: "preconnect", href: "https://fonts.googleapis.com" },
         {
           rel: "preconnect",
@@ -112,7 +112,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         },
         {
           rel: "stylesheet",
-          href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap",
+          href: "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap",
         },
       ],
     }),
