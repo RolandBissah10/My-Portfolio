@@ -11,7 +11,7 @@ export const NAV = [
 export const STATS = [
   { label: "Years learning to code", value: "3+" },
   { label: "Public GitHub repositories", value: "18" },
-  { label: "GitHub contributions in the last year", value: "600+" },
+  { label: "GitHub contributions in the last year", value: "300+" },
   { label: "Certificates", value: "6" },
 ];
 
@@ -44,7 +44,7 @@ export const SKILLS: {
     group: "Database",
     items: [
       { name: "MySQL", level: 70 },
-      { name: "Firebase", level: 82 },
+      { name: "Firebase", level: 62 },
       { name: "H2 Database", level: 78 },
     ],
   },
@@ -52,6 +52,7 @@ export const SKILLS: {
     group: "Testing & QA",
     items: [
       { name: "Selenium", level: 84 },
+      { name: "Playwright", level: 85 },
       { name: "RestAssured", level: 88 },
       { name: "Postman", level: 94 },
       { name: "JUnit", level: 87 },
@@ -75,7 +76,7 @@ export const SKILLS: {
     group: "Cloud",
     items: [
       { name: "AWS", level: 55 },
-      { name: "Firebase", level: 82 },
+      { name: "Firebase", level: 60 },
     ],
   },
 ];
@@ -160,7 +161,7 @@ export const EXPERIENCE = [
     ],
   },
   {
-    role: "Full Stack Developer (Freelance)",
+    role: "Backend Developer (Freelance)",
     company: "Independent Projects",
     period: "2024 - 2025",
     points: [
@@ -211,9 +212,9 @@ export const SERVICES = [
 ];
 
 export const CERTS = [
-  { title: "Full Stack Web Development", issuer: "Coursera", year: "2024" },
+  { title: "Backend Development", issuer: "Coursera", year: "2024" },
   { title: "Software Testing Foundations", issuer: "ISTQB Prep", year: "2024" },
-  { title: "Java Programming Masterclass", issuer: "Udemy", year: "2023" },
+  { title: "Playwright with Java", issuer: "Udemy", year: "2023" },
   { title: "Selenium WebDriver with Java", issuer: "Udemy", year: "2024" },
   { title: "REST API Testing with Postman", issuer: "Udemy", year: "2024" },
   { title: "Spring Boot & Microservices", issuer: "Coursera", year: "2024" },
