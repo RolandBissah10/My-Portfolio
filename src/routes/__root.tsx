@@ -96,7 +96,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         {
           property: "og:description",
           content:
-            "QA engineer at AmaliTech Ghana. Automated UI and API testing with Selenium, RestAssured and JUnit; backend services with Spring Boot and FastAPI.",
+            "QA engineer. Automated UI and API testing with Selenium, RestAssured and JUnit; backend services with Spring Boot and FastAPI.",
         },
         { property: "og:type", content: "website" },
         { name: "twitter:card", content: "summary_large_image" },
