@@ -38,7 +38,7 @@ export function Hero({ scrollTo }: HeroProps) {
               See my projects
             </button>
             <a
-              href="/Francis_Roland_Bissah.pdf"
+              href="/Francis_Roland_Bissah_CV.pdf"
               download
               className={buttonSecondary}
             >
