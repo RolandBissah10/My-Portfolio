@@ -1,7 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { PROJECTS, FILTERS } from "@/data/constants";
 import { SectionHeader } from "@/components/ui/SectionHeader";
-import { ProjectThumb } from "@/components/ui/ProjectThumb";
 
 interface ProjectsProps {
   filteredProjects: typeof PROJECTS;
@@ -19,68 +18,64 @@ export function Projects({
   return (
     <section
       id="projects"
-      className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-20"
+      className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20"
     >
-      <SectionHeader eyebrow="Featured Projects" title="Selected work" />
-      <div className="reveal mb-8 flex flex-wrap gap-2">
+      <SectionHeader eyebrow="Projects" title="Things I've built" />
+      <div
+        role="group"
+        aria-label="Filter projects"
+        className="mb-8 inline-flex overflow-hidden rounded-md border border-border"
+      >
         {FILTERS.map((f) => (
           <button
             key={f}
             onClick={() => setFilter(f)}
-            className={`cursor-pointer rounded-full px-4 py-2 text-sm font-medium transition ${
+            aria-pressed={filter === f}
+            className={`cursor-pointer border-r border-border px-4 py-2 text-sm transition-colors last:border-r-0 ${
               filter === f
-                ? "text-white shadow-glow"
-                : "border border-border bg-background hover:bg-secondary"
+                ? "bg-foreground text-background"
+                : "bg-card hover:bg-secondary"
             }`}
-            style={
-              filter === f
-                ? { background: "var(--gradient-primary)" }
-                : undefined
-            }
           >
             {f}
           </button>
         ))}
       </div>
 
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="grid gap-5 md:grid-cols-2">
         {filteredProjects.map((p) => (
           <article
             key={p.title}
-            className="reveal group cursor-pointer overflow-hidden rounded-3xl border border-border bg-card shadow-soft transition hover:-translate-y-1 hover:shadow-glow"
+            className="group flex cursor-pointer flex-col rounded-lg border border-border bg-card p-6 transition-colors hover:border-primary/60"
             onClick={() => setActiveProject(p)}
           >
-            <ProjectThumb title={p.title} tag={p.tag} />
-            <div className="p-6">
-              <div className="flex items-center justify-between">
-                <h3 className="font-display text-xl font-bold">
-                  {p.title}
-                </h3>
-                <span className="rounded-full border border-border px-2.5 py-1 text-[11px] font-medium text-muted-foreground">
-                  {p.category}
-                </span>
-              </div>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                {p.description}
-              </p>
-              <div className="mt-4 flex flex-wrap gap-1.5">
-                {p.tech.map((t) => (
-                  <span
-                    key={t}
-                    className="rounded-md bg-secondary px-2 py-1 text-[11px] font-medium"
-                  >
-                    {t}
-                  </span>
-                ))}
-              </div>
-              <div
-                className="mt-5 inline-flex items-center gap-1 text-sm font-semibold"
-                style={{ color: "var(--brand-purple)" }}
-              >
-                View details{" "}
-                <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
-              </div>
+            <div className="font-mono text-xs text-muted-foreground">
+              {p.tag}
             </div>
+            <h3 className="mt-2 text-lg font-semibold">{p.title}</h3>
+            <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
+              {p.description}
+            </p>
+            <div className="mt-4 flex flex-wrap gap-1.5">
+              {p.tech.map((t) => (
+                <span
+                  key={t}
+                  className="rounded-sm bg-secondary px-2 py-0.5 font-mono text-[11px]"
+                >
+                  {t}
+                </span>
+              ))}
+            </div>
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setActiveProject(p);
+              }}
+              className="mt-5 inline-flex cursor-pointer items-center gap-1 self-start text-sm font-medium text-primary"
+            >
+              Details
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+            </button>
           </article>
         ))}
       </div>
