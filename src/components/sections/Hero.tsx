@@ -20,10 +20,10 @@ export function Hero({ scrollTo }: HeroProps) {
           </h1>
 
           <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            I'm a QA engineer at AmaliTech Ghana, where I write manual and
-            automated tests for web applications: Selenium and JUnit for the UI,
-            Postman and RestAssured for APIs. I also build backend services and
-            REST APIs with Spring Boot and FastAPI.
+            I'm a QA engineer. I write manual and automated tests for web
+            applications: Selenium and JUnit for the UI, Postman and RestAssured
+            for APIs. I also build backend services and REST APIs with Spring
+            Boot and FastAPI.
           </p>
 
           <p className="mt-4 text-sm text-muted-foreground">
@@ -38,7 +38,7 @@ export function Hero({ scrollTo }: HeroProps) {
               See my projects
             </button>
             <a
-              href="/Francis_Roland_Bissah.pdf"
+              href="/Francis_Roland_Bissah_CV.pdf"
               download
               className={buttonSecondary}
             >

@@ -149,7 +149,7 @@ export const FILTERS = ["All", "Web", "AI", "QA"] as const;
 export const EXPERIENCE = [
   {
     role: "Quality Assurance Engineer",
-    company: "AmaliTech Ghana",
+    company: "Software services company",
     period: "2025 - Present",
     points: [
       "Designed comprehensive manual test cases across web modules",

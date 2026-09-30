@@ -12,10 +12,10 @@ export function About() {
       <div className="grid gap-10 lg:grid-cols-5">
         <div className="space-y-4 text-base leading-relaxed text-muted-foreground sm:text-lg lg:col-span-3">
           <p>
-            At AmaliTech Ghana I design test cases, automate regression suites
-            with Selenium and JUnit, and test APIs with Postman and RestAssured.
-            I work with developers in Agile ceremonies and follow defects
-            through to a verified fix.
+            In my QA work I design test cases, automate regression suites with
+            Selenium and JUnit, and test APIs with Postman and RestAssured. I
+            work with developers in Agile ceremonies and follow defects through
+            to a verified fix.
           </p>
           <p>
             I also build backend projects, mostly Java and Spring Boot or Python
