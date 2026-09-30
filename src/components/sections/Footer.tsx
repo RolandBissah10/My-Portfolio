@@ -21,7 +21,7 @@ const LINKS = [
 export function Footer() {
   return (
     <footer className="border-t border-border">
-      <div className="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-8 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between sm:px-8">
+      <div className="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-8 text-sm text-muted-foreground sm:flex-row sm:pb-24 sm:items-center sm:justify-between sm:px-8">
         <div>© {new Date().getFullYear()} Roland Bissah</div>
         <div className="flex items-center gap-5">
           {LINKS.map((l) => (

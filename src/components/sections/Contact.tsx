@@ -12,12 +12,16 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 import { buttonPrimary, buttonSecondary } from "@/components/ui/button";
 import { ContactRow } from "@/components/ui/ContactRow";
 import { Field } from "@/components/ui/Field";
+import { FormAssertions } from "@/components/ui/FormAssertions";
+import { emptySnapshot, snapshotForm } from "@/lib/form-snapshot";
+import { EMAIL_PATTERN } from "@/lib/email";
 import { useToast } from "@/components/ui/Toast";
 import { sendContactMessage } from "@/lib/contact";
 
 export function Contact() {
   const { showToast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [snapshot, setSnapshot] = useState(emptySnapshot);
 
   return (
     <section
@@ -54,6 +58,22 @@ export function Contact() {
         </div>
 
         <form
+          onInput={(e) => {
+            const form = e.currentTarget;
+            setSnapshot((prev) => snapshotForm(form, prev.touched));
+          }}
+          onBlur={(e) => {
+            const form = e.currentTarget;
+            const name = (e.target as Element).getAttribute("name");
+            if (!name) return;
+            // build on the latest state: a blocked submit moves focus and
+            // fires this right after the Send click marked every field
+            setSnapshot((prev) =>
+              prev.touched.has(name)
+                ? prev
+                : snapshotForm(form, new Set(prev.touched).add(name)),
+            );
+          }}
           onSubmit={async (e) => {
             e.preventDefault();
             if (isSubmitting) return;
@@ -72,6 +92,7 @@ export function Contact() {
               });
               showToast("success", "Message sent! I'll get back to you soon.");
               form.reset();
+              setSnapshot(emptySnapshot());
             } catch (err) {
               showToast(
                 "error",
@@ -95,6 +116,8 @@ export function Contact() {
             <Field
               name="email"
               type="email"
+              pattern={EMAIL_PATTERN}
+              title="Enter an email like name@example.com"
               label="Email"
               placeholder="jane@company.com"
               required
@@ -105,6 +128,7 @@ export function Contact() {
               name="subject"
               label="Subject"
               placeholder="Project inquiry"
+              required
             />
           </div>
           <div className="mt-4">
@@ -124,10 +148,22 @@ export function Contact() {
               className="w-full resize-none rounded-md border border-input bg-background px-3 py-2.5 text-sm outline-none transition-colors focus:border-primary focus:ring-2 focus:ring-primary/20"
             />
           </div>
+          <FormAssertions form={snapshot} />
           <div className="mt-5 flex flex-wrap gap-3">
             <button
               type="submit"
               disabled={isSubmitting}
+              onClick={(e) => {
+                const form = e.currentTarget.form;
+                if (!form) return;
+                const touched = new Set([
+                  "name",
+                  "email",
+                  "subject",
+                  "message",
+                ]);
+                setSnapshot(snapshotForm(form, touched));
+              }}
               className={buttonPrimary}
             >
               {isSubmitting ? (

@@ -15,13 +15,29 @@ import { Testimonials } from "@/components/sections/Testimonials";
 import { Contact } from "@/components/sections/Contact";
 import { Footer } from "@/components/sections/Footer";
 import { ProjectModal } from "@/components/ui/ProjectModal";
+import { Preloader } from "@/components/ui/Preloader";
+import { CoverageBadge } from "@/components/ui/CoverageBadge";
+
+const SECTIONS = [
+  { id: "home", label: "hero" },
+  { id: "about", label: "about" },
+  { id: "skills", label: "skills" },
+  { id: "projects", label: "projects" },
+  { id: "experience", label: "experience" },
+  { id: "services", label: "services" },
+  { id: "certs", label: "certifications" },
+  { id: "github", label: "GitHub activity" },
+  { id: "testimonials", label: "testimonials" },
+  { id: "contact", label: "contact form" },
+];
+const SECTION_IDS = SECTIONS.map((s) => s.id);
 
 export const Route = createFileRoute("/")({
   component: Portfolio,
 });
 
 function Portfolio() {
-  const [dark, setDark] = useState(false);
+  const [dark, setDark] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [showTop, setShowTop] = useState(false);
@@ -37,7 +53,7 @@ function Portfolio() {
   useEffect(() => {
     if (!themeInitialized.current) {
       themeInitialized.current = true;
-      setDark(localStorage.getItem("theme") === "dark");
+      setDark(localStorage.getItem("theme") !== "light");
       return;
     }
     document.documentElement.classList.toggle("dark", dark);
@@ -56,6 +72,24 @@ function Portfolio() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // fade sections up once as they enter the viewport
+  useEffect(() => {
+    document.documentElement.classList.add("reveal-ready");
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add("in");
+            io.unobserve(e.target);
+          }
+        });
+      },
+      { threshold: 0.1 },
+    );
+    document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+    return () => io.disconnect();
+  }, []);
+
   const filteredProjects = useMemo(
     () =>
       filter === "All"
@@ -71,6 +105,7 @@ function Portfolio() {
 
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-primary/20">
+      <Preloader sections={SECTIONS} />
       <Header
         dark={dark}
         setDark={setDark}
@@ -99,6 +134,8 @@ function Portfolio() {
       </main>
 
       <Footer />
+
+      <CoverageBadge ids={SECTION_IDS} />
 
       {showTop && (
         <button

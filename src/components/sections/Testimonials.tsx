@@ -3,7 +3,10 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 
 export function Testimonials() {
   return (
-    <section className="border-y border-border bg-secondary/50">
+    <section
+      id="testimonials"
+      className="border-y border-border bg-secondary/50"
+    >
       <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
         <SectionHeader eyebrow="Testimonials" title="What colleagues say" />
         <div className="grid gap-5 md:grid-cols-3">

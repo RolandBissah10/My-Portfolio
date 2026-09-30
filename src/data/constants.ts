@@ -11,7 +11,7 @@ export const NAV = [
 export const STATS = [
   { label: "Years learning to code", value: "3+" },
   { label: "Public GitHub repositories", value: "18" },
-  { label: "GitHub contributions in the last year", value: "300+" },
+  { label: "GitHub contributions in the last year", value: "600+" },
   { label: "Certificates", value: "6" },
 ];
 

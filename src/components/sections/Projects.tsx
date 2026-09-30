@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { PROJECTS, FILTERS } from "@/data/constants";
 import { SectionHeader } from "@/components/ui/SectionHeader";
@@ -15,6 +16,13 @@ export function Projects({
   setFilter,
   setActiveProject,
 }: ProjectsProps) {
+  // devtools-style inspect label on hover (mouse only)
+  const [inspect, setInspect] = useState<{
+    title: string;
+    w: number;
+    h: number;
+  } | null>(null);
+
   return (
     <section
       id="projects"
@@ -46,9 +54,31 @@ export function Projects({
         {filteredProjects.map((p) => (
           <article
             key={p.title}
-            className="group flex cursor-pointer flex-col rounded-lg border border-border bg-card p-6 transition-colors hover:border-primary/60"
+            className={`group relative flex cursor-pointer flex-col rounded-lg border bg-card p-6 transition-colors ${
+              inspect?.title === p.title
+                ? "border-dashed border-primary"
+                : "border-border"
+            }`}
             onClick={() => setActiveProject(p)}
+            onMouseEnter={(e) => {
+              if (!window.matchMedia("(pointer: fine)").matches) return;
+              const r = e.currentTarget.getBoundingClientRect();
+              setInspect({
+                title: p.title,
+                w: Math.round(r.width),
+                h: Math.round(r.height),
+              });
+            }}
+            onMouseLeave={() => setInspect(null)}
           >
+            {inspect?.title === p.title && (
+              <span
+                aria-hidden
+                className="inspect-label pointer-events-none absolute -top-3 left-4 rounded-sm bg-primary px-1.5 py-0.5 font-mono text-[10px] text-primary-foreground"
+              >
+                article.project {inspect.w} &times; {inspect.h}
+              </span>
+            )}
             <div className="font-mono text-xs text-muted-foreground">
               {p.tag}
             </div>
